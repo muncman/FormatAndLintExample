@@ -134,6 +134,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3824B2DF282A123200CC69BF /* Build configuration list for PBXNativeTarget "FormatAndLintExample" */;
 			buildPhases = (
+				3824B2E8282A12BD00CC69BF /* Format Installed */,
+				3824B2E9282A12E900CC69BF /* Format Not Installed */,
 				3824B2B7282A123100CC69BF /* Sources */,
 				3824B2B8282A123100CC69BF /* Frameworks */,
 				3824B2B9282A123100CC69BF /* Resources */,
@@ -151,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3824B2E2282A123200CC69BF /* Build configuration list for PBXNativeTarget "FormatAndLintExampleTests" */;
 			buildPhases = (
+				3824B2EA282A140600CC69BF /* Format Less Frequently */,
 				3824B2C7282A123200CC69BF /* Sources */,
 				3824B2C8282A123200CC69BF /* Frameworks */,
 				3824B2C9282A123200CC69BF /* Resources */,
@@ -251,6 +254,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3824B2E8282A12BD00CC69BF /* Format Installed */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Format Installed";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Requires SwiftFormat to be installed on the system.\n\n# Add to PATH for Homebrew (Intel), Homebrew (Apple Silicon), Mint. \n#export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \n#if command -v swiftformat >/dev/null 2>&1; then\n#    swiftformat \"$SRCROOT\"\n#else\n#    echo \"swiftformat is not installed.\" >&2 \n#    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n#    # exit 1\n#fi\n";
+		};
+		3824B2E9282A12E900CC69BF /* Format Not Installed */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Format Not Installed";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Does not require SwiftFormat to be installed on the system.\n# Instead invokes via SPM scaffold (inside sub-folder).\n\n#cd FormatTool\n#SDKROOT=$(xcrun --sdk macosx --show-sdk-path)\n# Temporarily uncomment the following line to update the version used to the latest matching the FormatTool/Package.swift file.\n# swift package update \n#swift run -c release swiftformat \"$SRCROOT\"\n";
+		};
+		3824B2EA282A140600CC69BF /* Format Less Frequently */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Format Less Frequently";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3824B2B7282A123100CC69BF /* Sources */ = {
