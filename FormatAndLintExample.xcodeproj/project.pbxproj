@@ -274,7 +274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Requires SwiftFormat to be installed on the system.\n\n# Add to PATH for Homebrew (Intel), Homebrew (Apple Silicon), Mint. \n#export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \n#if command -v swiftformat >/dev/null 2>&1; then\n#    swiftformat \"$SRCROOT\"\n#else\n#    echo \"swiftformat is not installed.\" >&2 \n#    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n#    # exit 1\n#fi\n";
+			shellScript = "# Requires SwiftFormat to be installed on the system.\n\n# Add to PATH for Homebrew (Intel), Homebrew (Apple Silicon), Mint. \nexport PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
 		};
 		3824B2E9282A12E900CC69BF /* ✳️ Format Not Installed */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -310,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
+			shellScript = "#export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \n#if command -v swiftformat >/dev/null 2>&1; then\n#    swiftformat \"$SRCROOT\"\n#else\n#    echo \"swiftformat is not installed.\" >&2 \n#    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n#    # exit 1\n#fi\n";
 		};
 		3824B2EE282A183600CC69BF /* ✅ Lint with SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
