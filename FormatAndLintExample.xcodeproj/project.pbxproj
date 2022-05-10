@@ -136,6 +136,7 @@
 			buildPhases = (
 				3824B2E8282A12BD00CC69BF /* Format Installed */,
 				3824B2E9282A12E900CC69BF /* Format Not Installed */,
+				3824B2EE282A183600CC69BF /* Lint */,
 				3824B2B7282A123100CC69BF /* Sources */,
 				3824B2B8282A123100CC69BF /* Frameworks */,
 				3824B2B9282A123100CC69BF /* Resources */,
@@ -309,6 +310,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
+		};
+		3824B2EE282A183600CC69BF /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if ! hash swiftlint 2>/dev/null; then\n    echo \"SwiftLint is not installed!\"\n    echo \"==> Install from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\nswiftlint \n# --lenient\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
