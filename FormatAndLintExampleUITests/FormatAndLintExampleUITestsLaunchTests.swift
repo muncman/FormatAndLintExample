@@ -12,7 +12,7 @@ class FormatAndLintExampleUITestsLaunchTests: XCTestCase {
         true
     }
 
-    override func setUpWithError() throws {
+    override func setUp() {
         continueAfterFailure = false
     }
 
