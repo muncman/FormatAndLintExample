@@ -328,7 +328,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if ! hash swiftlint 2>/dev/null; then\n    echo \"SwiftLint is not installed!\"\n    echo \"==> Install from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\nswiftlint \n# --lenient\n";
+			shellScript = "if ! hash swiftlint 2>/dev/null; then\n    echo \"SwiftLint is not installed!\"\n    echo \"==> Install from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\nswiftlint --lenient\n";
 		};
 		3824B2EF282A19D700CC69BF /* ✅ Lint with SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -346,7 +346,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat --lint \"$SRCROOT\"\n    # --lenient\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
+			shellScript = "export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat --lint --lenient \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
