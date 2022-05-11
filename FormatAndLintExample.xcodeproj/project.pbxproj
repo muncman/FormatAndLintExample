@@ -6,6 +6,20 @@
 	objectVersion = 55;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3824B2F3282A236D00CC69BF /* BuildVersioning */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3824B2F4282A236D00CC69BF /* Build configuration list for PBXAggregateTarget "BuildVersioning" */;
+			buildPhases = (
+				3824B2F7282A237300CC69BF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = BuildVersioning;
+			productName = BuildVersioning;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3824B2BF282A123100CC69BF /* FormatAndLintExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824B2BE282A123100CC69BF /* FormatAndLintExampleApp.swift */; };
 		3824B2C1282A123100CC69BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824B2C0282A123100CC69BF /* ContentView.swift */; };
@@ -14,6 +28,7 @@
 		3824B2D0282A123200CC69BF /* FormatAndLintExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824B2CF282A123200CC69BF /* FormatAndLintExampleTests.swift */; };
 		3824B2DA282A123200CC69BF /* FormatAndLintExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824B2D9282A123200CC69BF /* FormatAndLintExampleUITests.swift */; };
 		3824B2DC282A123200CC69BF /* FormatAndLintExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824B2DB282A123200CC69BF /* FormatAndLintExampleUITestsLaunchTests.swift */; };
+		3824B2F2282A225D00CC69BF /* Bundle+VersionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3824B2F1282A225D00CC69BF /* Bundle+VersionHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +46,13 @@
 			remoteGlobalIDString = 3824B2BA282A123100CC69BF;
 			remoteInfo = FormatAndLintExample;
 		};
+		3824B2F8282A239A00CC69BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3824B2B3282A123100CC69BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3824B2F3282A236D00CC69BF;
+			remoteInfo = BuildVersioning;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +66,7 @@
 		3824B2D5282A123200CC69BF /* FormatAndLintExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormatAndLintExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3824B2D9282A123200CC69BF /* FormatAndLintExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatAndLintExampleUITests.swift; sourceTree = "<group>"; };
 		3824B2DB282A123200CC69BF /* FormatAndLintExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatAndLintExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3824B2F1282A225D00CC69BF /* Bundle+VersionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+VersionHelper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				3824B2BD282A123100CC69BF /* FormatAndLintExample */,
+				3824B2F0282A222700CC69BF /* Util */,
 				3824B2CE282A123200CC69BF /* FormatAndLintExampleTests */,
 				3824B2D8282A123200CC69BF /* FormatAndLintExampleUITests */,
 				3824B2BC282A123100CC69BF /* Products */,
@@ -127,6 +151,14 @@
 			path = FormatAndLintExampleUITests;
 			sourceTree = "<group>";
 		};
+		3824B2F0282A222700CC69BF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3824B2F1282A225D00CC69BF /* Bundle+VersionHelper.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +177,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3824B2F9282A239A00CC69BF /* PBXTargetDependency */,
 			);
 			name = FormatAndLintExample;
 			productName = FormatAndLintExample;
@@ -209,6 +242,9 @@
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = 3824B2BA282A123100CC69BF;
 					};
+					3824B2F3282A236D00CC69BF = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 3824B2B6282A123100CC69BF /* Build configuration list for PBXProject "FormatAndLintExample" */;
@@ -227,6 +263,7 @@
 				3824B2BA282A123100CC69BF /* FormatAndLintExample */,
 				3824B2CA282A123200CC69BF /* FormatAndLintExampleTests */,
 				3824B2D4282A123200CC69BF /* FormatAndLintExampleUITests */,
+				3824B2F3282A236D00CC69BF /* BuildVersioning */,
 			);
 		};
 /* End PBXProject section */
@@ -274,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Requires SwiftFormat to be installed on the system.\n\n# Add to PATH for Homebrew (Intel), Homebrew (Apple Silicon), Mint. \nexport PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
+			shellScript = "# Requires SwiftFormat to be installed on the system.\n\n# Add to PATH for Homebrew (Intel), Homebrew (Apple Silicon), Mint. \nexport PATH=\"/usr/local/bin/:/opt/homebrew/:$HOME/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
 		};
 		3824B2E9282A12E900CC69BF /* ✳️ Format Not Installed */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -310,7 +347,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \n#if command -v swiftformat >/dev/null 2>&1; then\n#    swiftformat \"$SRCROOT\"\n#else\n#    echo \"swiftformat is not installed.\" >&2 \n#    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n#    # exit 1\n#fi\n";
+			shellScript = "#export PATH=\"/usr/local/bin/:/opt/homebrew/:$HOME/.mint/bin/:$PATH\"\n \n#if command -v swiftformat >/dev/null 2>&1; then\n#    swiftformat \"$SRCROOT\"\n#else\n#    echo \"swiftformat is not installed.\" >&2 \n#    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n#    # exit 1\n#fi\n";
 		};
 		3824B2EE282A183600CC69BF /* ✅ Lint with SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -346,7 +383,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin/:/opt/homebrew/:~/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat --lint --lenient \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
+			shellScript = "export PATH=\"/usr/local/bin/:/opt/homebrew/:$HOME/.mint/bin/:$PATH\"\n \nif command -v swiftformat >/dev/null 2>&1; then\n    swiftformat --lint --lenient \"$SRCROOT\"\nelse\n    echo \"swiftformat is not installed.\" >&2 \n    echo \"==> Install from https://github.com/nicklockwood/SwiftFormat\" >&2\n    # exit 1\nfi\n";
+		};
+		3824B2F7282A237300CC69BF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Scripts/build_versioning.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -355,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3824B2F2282A225D00CC69BF /* Bundle+VersionHelper.swift in Sources */,
 				3824B2C1282A123100CC69BF /* ContentView.swift in Sources */,
 				3824B2BF282A123100CC69BF /* FormatAndLintExampleApp.swift in Sources */,
 			);
@@ -389,6 +444,11 @@
 			isa = PBXTargetDependency;
 			target = 3824B2BA282A123100CC69BF /* FormatAndLintExample */;
 			targetProxy = 3824B2D6282A123200CC69BF /* PBXContainerItemProxy */;
+		};
+		3824B2F9282A239A00CC69BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3824B2F3282A236D00CC69BF /* BuildVersioning */;
+			targetProxy = 3824B2F8282A239A00CC69BF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -443,6 +503,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = FormatAndLintExample/Info.plist;
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -497,6 +560,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = FormatAndLintExample/Info.plist;
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -641,6 +707,24 @@
 			};
 			name = Release;
 		};
+		3824B2F5282A236D00CC69BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 825MF8C7NT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3824B2F6282A236D00CC69BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 825MF8C7NT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -676,6 +760,15 @@
 			buildConfigurations = (
 				3824B2E6282A123200CC69BF /* Debug */,
 				3824B2E7282A123200CC69BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3824B2F4282A236D00CC69BF /* Build configuration list for PBXAggregateTarget "BuildVersioning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3824B2F5282A236D00CC69BF /* Debug */,
+				3824B2F6282A236D00CC69BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

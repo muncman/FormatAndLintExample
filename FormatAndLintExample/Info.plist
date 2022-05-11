@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>XKEY_CLANG_VERSION</key>
+	<string>X_CLANG_VERSION</string>
+	<key>XKEY_ENV_INFO</key>
+	<string>X_ENV_INFO</string>
+	<key>XKEY_GIT_BRANCH</key>
+	<string>X_GIT_BRANCH</string>
+	<key>XKEY_GIT_COMMIT_COUNT</key>
+	<string>X_GIT_COMMIT_COUNT</string>
+	<key>XKEY_GIT_HASH</key>
+	<string>X_GIT_HASH</string>
+	<key>XKEY_PKGUTIL_INFO</key>
+	<string>X_PKGUTIL_INFO</string>
+	<key>XKEY_UNAME_INFO</key>
+	<string>X_UNAME_INFO</string>
+	<key>XKEY_UTC_BUILD_DATE</key>
+	<string>X_UTC_BUILD_DATE</string>
+	<key>XKEY_UTC_BUILD_TIME</key>
+	<string>X_UTC_BUILD_TIME</string>
+	<key>XKEY_XCODE_BUILD_VERSION</key>
+	<string>X_XCODE_BUILD_VERSION</string>
+	<key>XKEY_XCODE_SELECT_VERSION</key>
+	<string>X_XCODE_SELECT_VERSION</string>
+	<key>XKEY_XCRUN_VERSION</key>
+	<string>X_XCRUN_VERSION</string>
+</dict>
+</plist>
