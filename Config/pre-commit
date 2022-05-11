@@ -28,7 +28,7 @@ hooks_dir=$(dirname "$0")
 if [[ -n "$CHANGED_SWIFT_FILES" ]]
 then
 	cd "$hooks_dir/../../"
-	swiftformat . --exclude ImagePicker,Optik/,Prelude/,GPUImage-master/
+	swiftformat .
 else
 	echo "Nothing to format."
 fi
